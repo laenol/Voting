@@ -5,14 +5,16 @@
   "main": "index.js",
   "dependencies": {
     "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "ethereumjs-testrpc": "^6.0.3",
     "express": "^4.16.3",
     "morgan": "^1.10.0",
     "password-hash": "^1.2.2",
     "request": "^2.88.2",
-    "solc": "^0.4.11",
+    "solc": "^0.4.26",
+    "sqlite3": "^5.1.6",
     "web3": "^0.19.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
