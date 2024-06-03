@@ -53,7 +53,7 @@ ganache-cli
 ```
 
 ### 6. Run the Project
-Start the project by running:
+Start the project by running in the project file:
 ```bash
 node index.js
 ```
