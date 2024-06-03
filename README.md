@@ -1,39 +1,75 @@
 # Blockchain Voting System
 
-This is a repository for our group project in the Introduction to Blockchain course at University of Eastern Finland. We will be using the [sanattaori/techdot](https://github.com/sanattaori/techdot) Aadhar voting project as a base for our project. This project provides a starting point for building a blockchain-based voting system, and we will be adding our own modifications and features to it.
+Welcome to the Blockchain Voting System project! This repository is part of the Introduction to Blockchain course at the University of Eastern Finland. I am using the `sanattaori/techdot Aadhar` and `HeikkiLu/blockchain_voting` projects as a base, adding my own modifications and features to build a blockchain-based voting system.
 
-## Running the project
+## Running the Project
 
-- Clone the project
-`git clone https://github.com/HeikkiLu/blockchain_voting.git`
-- Rename `voting.sol` to `Voting.sol` 😅
-### Locally
-1. Go into the project directory and install dependencies with `npm install`
-2. Install `npm install ethereumjs-testrpc web3` and `npm install solc`
-3. Install [ganache-cli](https://github.com/trufflesuite/ganache) with `npm install -g ganache-cli`
-    - Ganache is a tool for creating a local blockchain for fast development with Ethereum.
-4. Initialize sqlite database by running `node init_db.js`
-5. Change ganache address in https://github.com/HeikkiLu/blockchain_voting/blob/662a2b01b3314db8fd8b279c1d5821529e1c69b4/index.js#L48 to `http://localhost:8545'`
-6. Change `hostname` in https://github.com/HeikkiLu/blockchain_voting/blob/c776dd7dff50e51a84d1418827a68ec17fcba788/check_ganache_availibility.js#L6 to `localhost`
-7. Run `ganache-cli` to create the local blockchain
-8. Run the project with `node index.js`
+Follow these steps to run the project locally.
 
-### With docker
+### 1. Clone the Project
+Clone the repository to your local machine:
+```bash
+git clone https://github.com/laenol/Voting
+```
 
-In the project folder:
-1. `docker-compose build`
-2. `docker-compose up`
+### 2. Install Dependencies
+Navigate into the project directory and install the necessary dependencies:
+```bash
+npm install
+```
+Install additional dependencies:
+```bash
+npm install ethereumjs-testrpc web3
+npm install solc
+```
+Install `ganache-cli` globally. Ganache is a tool for creating a local blockchain for fast development with Ethereum:
+```bash
+npm install -g ganache-cli
+```
 
-Or in *nix systems:
-1. Run `./restart_docker.sh` in terminal
+### 3. Initialize the Database
+Initialize the SQLite database by running:
+```bash
+node init_db.js
+```
 
-## Default credentials
-| Username | Password |
-|----------|----------|
-| admin    | password    |
+### 4. Configure Ganache
+Change the Ganache address in `blockchain_voting/index.js`:
 
+- Open `blockchain_voting/index.js`
+- Find line 48 (`web3.setProvider(new web3.providers.HttpProvider('http://ganache:8545'));`)
+- Change `'http://ganache:8545'` to `'http://localhost:8545'`
 
+Change the hostname in `blockchain_voting/check_ganache_availibility.js`:
 
-## License
+- Open `blockchain_voting/check_ganache_availibility.js`
+- Find line 6 (`hostname: 'ganache',`)
+- Change `'ganache'` to `'localhost'`
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+### 5. Run Ganache
+Start Ganache to create the local blockchain:
+```bash
+ganache-cli
+```
+
+### 6. Run the Project
+Start the project by running:
+```bash
+node index.js
+```
+
+### Default Credentials
+Use the following default credentials to log in:
+- **Username:** `admin`
+- **Password:** `password`
+
+## Explanation
+
+- **Cloning the Project:** Copies the project repository to your local machine.
+- **Installing Dependencies:** Installs the necessary software libraries required to run the project.
+- **Initializing the Database:** Sets up the database that will store the voting data.
+- **Configuring Ganache:** Ensures the project connects to the local blockchain created by Ganache.
+- **Running Ganache:** Starts the local blockchain environment for testing and development.
+- **Running the Project:** Launches the voting system application.
+
+This step-by-step guide should make it easy to set up and run the Blockchain Voting System on your local machine. Enjoy exploring the world of blockchain-based voting!
